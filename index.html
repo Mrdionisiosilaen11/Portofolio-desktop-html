@@ -3,75 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Home</title>
-    <style>
-        img {
-            max-width: 300px;
-            height: auto;
-            display: block;
-            margin: 10px auto;
-        }
-    </style>
+    <title>MR.D - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">About</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="#">Download CV</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <div class="brand">MR.D</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="button">Download CV</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section>
-        <h1>Hi My Friend, I'm Dion 👋</h1>
-        <p>West Java, Indonesian | Available for new projects</p>
-        <img src="_DSC2908[1].jpg" alt="Profile Image">
-        <p>I can design, but I've only been doing it for a year. I'm still learning new things and am also somewhat proficient in coding.</p>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Hi My Friend, I'm Dion 👋</h1>
+                <div class="hero-details">
+                    <p class="subtitle">West Java, Indonesian</p>
+                    <p class="availability">Available for new projects</p>
+                </div>
+                <p class="description">I can design, but I've only been doing it for a year. I'm still learning new things and am also somewhat proficient in coding.</p>
+            </div>
+            <img src="_DSC2908[1].jpg" alt="Profile" class="profile-img">
+        </section>
 
-    <section>
-        <h2>Curious about me? Here you can see it:</h2>
-        <p>I have a decent grasp of HTML, CSS, and designing using Figma. I am a progressive thinker and thoroughly enjoy playing games from start to finish, immersing myself in the entire experience.</p>
-        <p><strong>Interests:</strong> Gamer | Volleyball Player</p>
-        <img src="IMG_0783.jpg" alt="About Me Image">
-    </section>
+        <div class="divider"></div>
 
-    <section>
-        <h2>Skills & Technologies</h2>
-        <ul>
-            <li>Figma</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Git</li>
-        </ul>
-    </section>
+        <section class="about" id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <img src="IMG_0783.JPG" alt="About" class="about-img">
+                <div class="about-text">
+                    <p class="about-lead">Curious about me? Here you can see it:</p>
+                    <p class="about-body">I have a decent grasp of HTML, CSS, and designing using Figma. I am a progressive thinker and thoroughly enjoy playing games from start to finish, immersing myself in the entire experience.</p>
+                    <div class="highlights">
+                        <h3 class="highlight-title">Quick Bits:</h3>
+                        <ul class="highlight-list">
+                            <li class="highlight-item">🎮 Gamer</li>
+                            <li class="highlight-item">🏐 Volleyball Player</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section>
-        <h2>Experience</h2>
-        <ul>
-            <li>Frontend Developer - Upwork (November 2023 - Present)</li>
-            <li>Design - Upwork (November 2023 - Present)</li>
-            <li>Diagram Relation - Upwork (2024 - Present)</li>
-        </ul>
-    </section>
+        <div class="divider"></div>
 
-    <section>
-        <h2>Testimonials</h2>
-        <ul>
-            <li>"Job well done! I am really impressed." - Ilham</li>
-            <li>"Great guy, highly recommended!" - Kurniawan</li>
-            <li>"Segar was extremely easy and pleasant to work with." - Kurniadi</li>
-        </ul>
-    </section>
+        <section class="skills" id="skills">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <ul class="skills-grid">
+                <li class="skill-card">
+                    <span class="skill-name">Figma</span>
+                    <div class="skill-progress"></div>
+                </li>
+                <li class="skill-card">
+                    <span class="skill-name">HTML</span>
+                    <div class="skill-progress"></div>
+                </li>
+                <li class="skill-card">
+                    <span class="skill-name">CSS</span>
+                    <div class="skill-progress"></div>
+                </li>
+                <li class="skill-card">
+                    <span class="skill-name">Git</span>
+                    <div class="skill-progress"></div>
+                </li>
+            </ul>
+        </section>
 
-    <section>
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:dionisioslaen123@gmail.com">dionisioslaen123@gmail.com</a></p>
-        <p>Phone: +62 82118946631</p>
-    </section>
+        <div class="divider"></div>
+
+        <section class="experience" id="experience">
+            <h2 class="section-title">Experience</h2>
+            <ul class="experience-list">
+                <li class="experience-item">
+                    <h3 class="experience-role">Frontend Developer - Upwork</h3>
+                    <p class="experience-duration">November 2023 - Present</p>
+                    <p class="experience-description">Lumayan menguasai.</p>
+                </li>
+                <li class="experience-item">
+                    <h3 class="experience-role">Design - Upwork</h3>
+                    <p class="experience-duration">November 2023 - Present</p>
+                    <p class="experience-description">Lumayan menguasai.</p>
+                </li>
+                <li class="experience-item">
+                    <h3 class="experience-role">Diagram Relation - Upwork</h3>
+                    <p class="experience-duration">2024 - Present</p>
+                    <p class="experience-description">Lumayan menguasai.</p>
+                </li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="testimonials" id="testimonials">
+            <h2 class="section-title">Testimonials</h2>
+            <ul class="testimonials-grid">
+                <li class="testimonial-card">
+                    <p class="testimonial-text">"Job well done! I am really impressed."</p>
+                    <p class="testimonial-author">- Ilham</p>
+                </li>
+                <li class="testimonial-card">
+                    <p class="testimonial-text">"Great guy, highly recommended!"</p>
+                    <p class="testimonial-author">- Kurniawan</p>
+                </li>
+                <li class="testimonial-card">
+                    <p class="testimonial-text">"Segar was extremely easy and pleasant to work with."</p>
+                    <p class="testimonial-author">- Kurniadi</p>
+                </li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="contact" id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <p class="contact-info">Email: <a href="mailto:dionisiosilaen123@gmail.com">dionisiosilaen123@gmail.com</a></p>
+                <p class="contact-info">Phone: +62 82118946631</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 | DIONISIO SILAEN</p>
+    </footer>
 </body>
 </html>
