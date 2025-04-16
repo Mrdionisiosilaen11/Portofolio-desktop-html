@@ -132,16 +132,42 @@
 
         <section class="contact" id="contact">
             <h2 class="section-title">Contact</h2>
-            <div class="contact-content">
-                <p class="contact-info">Email: <a href="mailto:dionisiosilaen123@gmail.com">dionisiosilaen123@gmail.com</a></p>
-                <p class="contact-info">Phone: +62 82118946631</p>
-            </div>
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda">
+                    <small class="error-message"></small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="contoh@email.com">
+                    <small class="error-message"></small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telepon">Nomor Handphone</label>
+                    <input type="tel" id="telepon" name="telepon" placeholder="081234567890">
+                    <small class="error-message"></small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pesan">Pesan</label>
+                    <textarea id="pesan" name="pesan" placeholder="Tulis pesan Anda (maksimal 500 karakter)" rows="5"></textarea>
+                    <small class="error-message"></small>
+                </div>
+                
+                <button type="submit" class="button">Kirim Pesan</button>
+            </form>
         </section>
     </main>
 
     <footer>
         <p>© 2025 | DIONISIO SILAEN</p>
     </footer>
+    
+    <!-- Tambahkan jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
