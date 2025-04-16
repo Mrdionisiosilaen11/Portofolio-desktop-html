@@ -154,3 +154,81 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// ======================
+// Form Validation with jQuery
+// ======================
+$(document).ready(function() {
+    $('#contactForm').on('submit', function(e) {
+        e.preventDefault();
+        let isValid = true;
+
+        // Reset error messages
+        $('.error-message').removeClass('active');
+
+        // Validasi Nama
+        const nama = $('#nama').val().trim();
+        if (nama === '') {
+            showError($('#nama'), 'Nama lengkap wajib diisi');
+            isValid = false;
+        } else if (nama.length > 50) {
+            showError($('#nama'), 'Nama maksimal 50 karakter');
+            isValid = false;
+        }
+
+        // Validasi Email
+        const email = $('#email').val().trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email === '') {
+            showError($('#email'), 'Email wajib diisi');
+            isValid = false;
+        } else if (!emailRegex.test(email)) {
+            showError($('#email'), 'Format email tidak valid');
+            isValid = false;
+        }
+
+        // Validasi Telepon
+        const telepon = $('#telepon').val().trim();
+        const phoneRegex = /^[0-9]+$/;
+        if (telepon === '') {
+            showError($('#telepon'), 'Nomor handphone wajib diisi');
+            isValid = false;
+        } else if (!phoneRegex.test(telepon)) {
+            showError($('#telepon'), 'Hanya boleh berisi angka');
+            isValid = false;
+        } else if (telepon.length < 10 || telepon.length > 15) {
+            showError($('#telepon'), 'Nomor handphone harus 10-15 digit');
+            isValid = false;
+        }
+
+        // Validasi Pesan
+        const pesan = $('#pesan').val().trim();
+        if (pesan === '') {
+            showError($('#pesan'), 'Pesan wajib diisi');
+            isValid = false;
+        } else if (pesan.length > 500) {
+            showError($('#pesan'), 'Pesan maksimal 500 karakter');
+            isValid = false;
+        }
+
+        // Jika semua valid, submit form
+        if (isValid) {
+            // Simulasi pengiriman data
+            alert('Formulir valid! Data akan dikirim...');
+            // Reset form
+            this.reset();
+        }
+    });
+
+    function showError(input, message) {
+        const errorElement = input.next('.error-message');
+        errorElement.text(message).addClass('active');
+        input.addClass('error');
+    }
+
+    // Hapus error saat input diisi
+    $('input, textarea').on('input', function() {
+        $(this).removeClass('error');
+        $(this).next('.error-message').removeClass('active');
+    });
+});
