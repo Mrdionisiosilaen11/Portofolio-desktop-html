@@ -401,30 +401,67 @@ h1 {
     text-align: right;
 }
 
-/* Contact Section */
+/* Contact Form Styles */
 .contact {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-lg);
+    padding: var(--spacing-xl) var(--spacing-lg);
 }
 
-.contact-content {
-    text-align: center;
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
 }
 
-.contact-info {
-    font-size: 1.2rem;
-    margin-bottom: var(--spacing-sm);
+.form-group {
+    margin-bottom: var(--spacing-md);
 }
 
-.contact-info a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: opacity 0.3s ease;
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
 }
 
-.contact-info a:hover {
-    opacity: 0.8;
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--background-medium);
+    border-radius: 5px;
+    background: var(--background-medium);
+    color: var(--text-light);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: #ff4444 !important;
+}
+
+.error-message {
+    color: #ff4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.error-message.active {
+    display: block;
+}
+
+.contact-form .button {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1rem !important;
 }
 
 /* Footer */
@@ -506,10 +543,6 @@ footer {
 
     .skill-name, .experience-role, .testimonial-text {
         font-size: 1.1rem;
-    }
-
-    .contact-info {
-        font-size: 1rem;
     }
 
     .hamburger {
