@@ -1,4 +1,3 @@
-/* style.css */
 :root {
     --primary-color: #00D084;
     --background-dark: #1E1E2F;
@@ -10,7 +9,6 @@
     --spacing-sm: 1rem;
 }
 
-/* Reset dan Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +21,7 @@ body {
     color: var(--text-light);
     line-height: 1.7;
     font-size: 1.1rem;
+    transition: margin-left 0.3s;
 }
 
 /* Header */
@@ -50,10 +49,90 @@ header {
     letter-spacing: 1px;
 }
 
+/* Hamburger Menu - Selalu Tampil */
+.hamburger {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    z-index: 1001;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.hamburger-box {
+    width: 30px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner, 
+.hamburger-inner::before, 
+.hamburger-inner::after {
+    width: 30px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.hamburger-inner {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger-inner::before, 
+.hamburger-inner::after {
+    content: "";
+    display: block;
+}
+
+.hamburger-inner::before {
+    top: -10px;
+}
+
+.hamburger-inner::after {
+    bottom: -10px;
+}
+
+/* Active state */
+.hamburger.active .hamburger-inner {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.hamburger.active .hamburger-inner::before {
+    transform: translateY(10px) rotate(90deg);
+}
+
+.hamburger.active .hamburger-inner::after {
+    opacity: 0;
+}
+
+/* Navigation - Off-canvas */
 nav ul {
-    display: flex;
-    gap: var(--spacing-md);
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100vh;
+    background: var(--background-medium);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 30px 30px;
+    gap: 1.5rem;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    margin: 0;
     list-style: none;
+}
+
+nav ul.active {
+    left: 0;
 }
 
 nav a {
@@ -63,6 +142,7 @@ nav a {
     transition: all 0.3s ease;
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    display: block;
 }
 
 nav a:hover {
@@ -74,6 +154,8 @@ nav a:hover {
     background: var(--primary-color);
     color: var(--background-dark) !important;
     padding: 0.75rem 1.5rem !important;
+    border-radius: 5px;
+    font-weight: 600;
 }
 
 /* Hero Section */
@@ -204,6 +286,9 @@ h1 {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--spacing-md);
     list-style: none;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
 }
 
 .skill-card {
@@ -232,14 +317,15 @@ h1 {
 }
 
 .skill-progress::after {
-    content: '';
+    content: attr(data-width);
     position: absolute;
     left: 0;
     top: 0;
     height: 100%;
-    width: 80%;
+    width: var(--progress-width, 0);
     background: var(--primary-color);
     border-radius: 2px;
+    transition: width 1s ease;
 }
 
 /* Experience Section */
@@ -248,6 +334,9 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
 }
 
 .experience-item {
@@ -284,6 +373,9 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
 }
 
 .testimonial-card {
@@ -310,6 +402,12 @@ h1 {
 }
 
 /* Contact Section */
+.contact {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
 .contact-content {
     text-align: center;
 }
@@ -338,6 +436,24 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    :root {
+        --spacing-xl: 3rem;
+        --spacing-lg: 2rem;
+        --spacing-md: 1.5rem;
+        --spacing-sm: 0.75rem;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+}
+
 @media (max-width: 768px) {
     .hero {
         grid-template-columns: 1fr;
@@ -349,12 +465,75 @@ footer {
         grid-template-columns: 1fr;
     }
     
+    .profile-img {
+        order: -1;
+        margin: 0 auto;
+    }
+
+    .highlight-list {
+        flex-direction: column;
+    }
+
     nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
+        width: 100%;
+        padding: 100px 20px 20px;
+    }
+
+    .hamburger {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --spacing-xl: 2rem;
+        --spacing-lg: 1.5rem;
+        --spacing-md: 1rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .subtitle, .about-lead {
+        font-size: 1.2rem;
+    }
+
+    .skill-name, .experience-role, .testimonial-text {
+        font-size: 1.1rem;
+    }
+
+    .contact-info {
+        font-size: 1rem;
+    }
+
+    .hamburger {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
     }
     
-    h1 {
-        font-size: 2.5rem;
+    .hamburger, nav ul {
+        display: none !important;
+    }
+    
+    .hero, .about, .skills, .experience, .testimonials, .contact {
+        padding: 1rem !important;
+    }
+    
+    .divider {
+        margin: 1rem auto !important;
     }
 }
