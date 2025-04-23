@@ -1,0 +1,83 @@
+/* Blog Header */
+.blog-header {
+    background-color: #2D2D44;
+    color: white;
+}
+
+/* Card Artikel */
+.blog-card {
+    transition: transform 0.3s;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+/* Konten Artikel */
+.article-content {
+    line-height: 1.8;
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .blog-header h1 {
+        font-size: 2rem;
+    }
+}
+/* Gaya khusus untuk halaman post */
+.post-container {
+    background: var(--background-dark);
+    color: var(--text-light);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.post-title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.post-meta {
+    color: var(--text-light);
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.post-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.comment-section {
+    background: var(--background-medium);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.comment-form {
+    background: var(--background-medium);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
