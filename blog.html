@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Gunakan head yang sama seperti index.html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MR.D - Blog</title>
+    <!-- Tambahkan Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Anda -->
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS khusus Blog -->
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+<body>
+    <!-- Header (Copy dari index.html) -->
+    <header>
+        <!-- ... sama seperti di index.html ... -->
+    </header>
+
+    <!-- Konten Blog -->
+    <section class="blog-header py-5">
+        <div class="container">
+            <h1 class="text-center">Blog Saya</h1>
+            <p class="text-center lead">Artikel tentang desain & pengembangan web</p>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <div class="row">
+            <!-- Daftar Artikel -->
+            <div class="col-lg-8">
+                <div class="row">
+                    <!-- Artikel 1 -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <img src="https://via.placeholder.com/800x500" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <span class="badge bg-primary mb-2">Design</span>
+                                <h5 class="card-title">Tips Desain UI Modern</h5>
+                                <p class="text-muted small">
+                                    <i class="far fa-calendar me-1"></i> 23 April 2025
+                                    <i class="far fa-comments ms-3 me-1"></i> 5 Komentar
+                                </p>
+                                <p class="card-text">Panduan praktis untuk membuat desain antarmuka yang modern dan user-friendly.</p>
+                                <a href="post.html" class="btn btn-primary">Baca Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Artikel 2 -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <img src="https://via.placeholder.com/800x500" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <span class="badge bg-success mb-2">Coding</span>
+                                <h5 class="card-title">Belajar Bootstrap 5</h5>
+                                <p class="text-muted small">
+                                    <i class="far fa-calendar me-1"></i> 20 April 2025
+                                    <i class="far fa-comments ms-3 me-1"></i> 8 Komentar
+                                </p>
+                                <p class="card-text">Tutorial lengkap untuk pemula yang ingin menguasai Bootstrap 5.</p>
+                                <a href="post.html" class="btn btn-primary">Baca Selengkapnya</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Cari Artikel</h5>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Kata kunci...">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Kategori</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Design
+                                <span class="badge bg-primary rounded-pill">5</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Coding
+                                <span class="badge bg-primary rounded-pill">12</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+       
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
